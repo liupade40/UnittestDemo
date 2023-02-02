@@ -12,7 +12,6 @@ class TestBase(unittest.TestCase):
         cf = read_ini()
         cls.browerName = cf.get('browserType','browerName')
         cls.url = cf.get('testServer', 'URL')
-        print(cls.browerName)
     def setUp(self):
         """chromedriver.exe 需要放在python.exe的根目录下面"""
         if  self.browerName == 'Chrome':

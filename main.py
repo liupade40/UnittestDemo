@@ -1,15 +1,20 @@
-
 import unittest
-class unittest1(unittest.TestCase):
-    def setUp(self) -> None:
-        print("这是setup下面的打印内容")
-    def test_1(self):
-        print("进行登录")
-    def tearDown(self) -> None:
-        print("这是tearDown下面打印的内容")
+from HTMLTestRunner import HTMLTestRunner
+import time
+import os
 
+# 定义输出的文件位置和名字
+DIR = os.path.dirname(os.path.abspath(__file__))
+now = time.strftime("%Y%m%d%H%M", time.localtime(time.time()))
 
-suite = unittest.TestSuite()
-suite.addTest(unittest1("test_1"))
-runner = unittest.TextTestRunner()
-runner.run(suite)
+filename = now + "report.html"
+# discover方法执行测试套件
+testsuite = unittest.defaultTestLoader.discover(
+    start_dir='./testsuites',
+    pattern='*case.py',
+    top_level_dir=None
+)
+
+with open(DIR + '/test_report/' + filename, 'w',encoding="UTF-8") as f:
+    runner = HTMLTestRunner.HTMLTestRunner(stream=f, verbosity=2, title='gateway UI report', description='执行情况')
+    runner.run(testsuite)

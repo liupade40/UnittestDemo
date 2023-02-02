@@ -55,10 +55,8 @@ class BasePage(object):
         把file_path保存到我们项目根目录的一个文件夹.\Screenshots下
         """
         file_path = os.path.dirname(os.path.abspath('.')) + '/UnittestDemo/screenshots/'
-        print(file_path)
         rq = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
         screen_name = file_path + rq + '.png'
-        print(screen_name)
         try:
             self.driver.get_screenshot_as_file(screen_name)
             logger.info("Had take screenshot and save to folder : /screenshots")
