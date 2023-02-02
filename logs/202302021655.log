@@ -1,6 +1,0 @@
-2023-02-02 16:55:37,877 - BasePage - INFO - wait for 5 seconds.
-2023-02-02 16:55:38,014 - BasePage - INFO - Had type ' selenium ' in inputBox
-2023-02-02 16:55:38,277 - BasePage - INFO - The element '' was clicked.
-2023-02-02 16:55:38,277 - cloud_page - INFO - show results!
-2023-02-02 16:55:40,279 - BasePage - INFO - Sleep for 2 seconds
-2023-02-02 16:55:42,457 - BasePage - INFO - Had take screenshot and save to folder : /screenshots
